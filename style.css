@@ -1,10 +1,75 @@
-/* nejsme vcerejsi, pouzivame moderni box model */
 html { box-sizing: border-box; }
 *, :after, :before { box-sizing: inherit; }
 
 body {
 	margin: 0;
 	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+}
+
+h1, h2 {
+	font-family: 'Raleway', sans-serif;
+	padding: 10px;
+	margin: 0;
+	text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+	font-size: 28px;
+	padding-top: 120px;
+}
+
+h2 {
+	font-size: 18px;
+	padding-top: 20px;
+}
+
+.text {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+p {
+	margin: 0;
+}
+
+.hlavni {
+	background-image: url(images/salat.jpg);
+	background-size: cover;
+	background-position: center;
+	min-height: 200px;
+	border-bottom: 1px solid #ffffff;
+}
+
+.recept {
+	border-bottom: 1px solid #ffffff;
+	min-height: 90px;
+}
+
+.jedna {
+	background-image: url(images/chlebicek.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.dva {
+	background-image: url(images/tacos.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.tri {
+	background-image: url(images/cizrna.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.ctyri {
+	background-image: url(images/burger.jpg);
+	background-size: cover;
+	background-position: center;
 }
 
 .paticka {
@@ -17,19 +82,63 @@ body {
 	color: silver;
 }
 
-/* -------------------------------------------------- */
 
-/*
-Responzivní breakpointy:
-Mobil:		0 - 479px
-Tablet:		480px - 859px
-Počítač:	860px a víc
 
-Chrome a některé další prohlížeče nejdou zmenšit pod určitou šířku, takže je možné, že ti nepůjde zmenšit tolik, aby se aktivovala mobilní verze. Pokud se ti to stane, změň si v kódu hranici mezi mobilem a tabletem třeba na 600px, nebo aktivuj v prohlížeči vývojářské nástroje s mobilním náhledem, kde může nastavovat jakoukoliv velikost (i malou).
+@media screen and (min-width: 480px) {
+	.male {
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-Obrázky pro jednotlivé recepty jsou ve složce images.
-Nastav je receptům jako obrázky na pozadí (tj. nepřidávej je jako <img> do HTML)
+	.hlavni {
+		min-height: 250px;
+	}
 
-Na rozložení prvků NEPOUŽÍVEJ absolutní pozicování, ale pouze flexboxy.
-Flexboxy mohou být vnořené do sebe, klidně několikrát.
-*/
+	.recept {
+		flex: 0 0 50%;
+		min-height: 150px;
+	}
+
+	.jedna, .tri {
+		border-right: 1px solid #ffffff;
+	}
+
+	h1 {
+		font-size: 36px;
+		padding: 120px 20px 20px 20px;
+	}
+
+	h2 {
+		font-size: 22px;
+		padding: 45px 20px 20px 20px;
+	}
+
+	.text {
+		padding: 20px;
+	}
+}
+
+@media screen and (min-width: 860px) {
+	.recepty {
+		display: flex;
+	}
+
+	.hlavni {
+		border-right: 1px solid #ffffff;
+		min-height: 400px;
+	}
+
+	.recept {
+		min-height: 200px;
+	}
+
+	h1 {
+		font-size: 48px;
+		padding: 190px 20px 20px 20px;
+	}
+
+	h2 {
+		font-size: 28px;
+		padding: 80px 20px 20px 20px;
+	}
+}
